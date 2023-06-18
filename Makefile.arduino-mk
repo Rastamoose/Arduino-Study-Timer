@@ -1,0 +1,24 @@
+
+ARDUINO_DIR = /usr/share/arduino
+ARDMK_DIR = /usr/share/arduino
+AVRDUDE_CONF = /etc/avrdude.conf
+ARDUINO_CORE_PATH = /usr/share/arduino/hardware/archlinux-arduino/avr/cores/arduino
+ARDUINO_PLATFORM_LIB_PATH = /usr/share/arduino/hardware/archlinux-arduino/avr/libraries
+BOARDS_TXT = /usr/share/arduino/hardware/archlinux-arduino/avr/boards.txt
+ARDUINO_VAR_PATH = /usr/share/arduino/hardware/archlinux-arduino/avr/variants
+BOOTLOADER_PARENT = /usr/share/arduino/hardware/archlinux-arduino/avr/bootloaders
+CPPFLAGS += -I/usr/share/arduino/hardware/archlinux-arduino/avr/libraries/stlport
+
+BOARD_TAG    = uno
+ARDUINO_PORT = /dev/ttyACM0
+
+# Arduino core libraries (uncomment the ones you need)
+ARDUINO_LIBS = Custom
+
+# Compiler and linker flags
+CPPFLAGS += -Wall
+CXXFLAGS += -std=gnu++11
+LDFLAGS  += -mmcu=$(MCU)
+
+# Path to the Arduino.mk file
+include /usr/share/arduino/Arduino.mk
